@@ -1912,3 +1912,8 @@ alertcondition(TrailaxisTransitionOmegaCrossing, title="Last Cross", message="La
 alertcondition(CandlesTransitionOmegaCrossing, title="BreakOut", message="BreakOut {{ticker}} {{interval}}")
 
 
+
+
+
+
+
