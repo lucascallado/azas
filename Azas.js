@@ -14,50 +14,50 @@ var ltfsize = input.string('Small', 'Size', options = ['Small', 'Medium', 'Large
 var ltftype = input.string('Candles', 'Type', options = ['Candles', 'Heikin Ashi'], group = ltf_group)
 var ltfmargin = input.int(1, 'Margin', minval = 1, group = ltf_group)
 var ltf_data = input.string('Weekly', 'Use data to generate candles', options = ['Weekly', 'Always', 'Never'], group = ltf_group)
-var ltfup_col_wick = input.color(color.new(#151e23, 0), 'Up Wick', inline = 'Wicks', group = ltf_group)
-var ltfup_col_border = input.color(color.new(#151e23, 0), 'Up Border', inline = 'Wicks', group = ltf_group)
-var ltfdown_col_wick = input.color(color.new(#151e23, 0), 'Down Wick', inline = 'Wicks', group = ltf_group)
-var ltfdown_col_border = input.color(color.new(#151e23, 0), 'Down Border', inline = 'Wicks', group = ltf_group)
-var ltfo_col = input.color(color.new(#151e23, 0), '', inline = 'o', group = ltf_group)
+var ltfup_col_wick = input.color(color.new(#6b3e2e, 0), 'Up Wick', inline = 'Wicks', group = ltf_group)
+var ltfup_col_border = input.color(color.new(#6b3e2e, 0), 'Up Border', inline = 'Wicks', group = ltf_group)
+var ltfdown_col_wick = input.color(color.new(#6b3e2e, 0), 'Down Wick', inline = 'Wicks', group = ltf_group)
+var ltfdown_col_border = input.color(color.new(#6b3e2e, 0), 'Down Border', inline = 'Wicks', group = ltf_group)
+var ltfo_col = input.color(color.new(#6b3e2e, 0), '', inline = 'o', group = ltf_group)
 var ltfo_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'o', group = ltf_group)
 var ltfo_width = input.int(1, 'Width', minval = 1, inline = 'o', group = ltf_group)
 var ltfo_enabled = input.bool(true, 'Open', inline = 'o', group = ltf_group)
-var ltfhl_col = input.color(color.new(#151e23, 70), '', inline = 'hl', group = ltf_group)
+var ltfhl_col = input.color(color.new(#6b3e2e, 70), '', inline = 'hl', group = ltf_group)
 var ltfhl_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'hl', group = ltf_group)
 var ltfhl_width = input.int(1, 'Width', minval = 1, inline = 'hl', group = ltf_group)
 var ltfhl_enabled = input.bool(false, 'High/Low', inline = 'hl', group = ltf_group)
-var ltfc_col = input.color(color.new(#151e23, 0), '', inline = 'c', group = ltf_group)
+var ltfc_col = input.color(color.new(#6b3e2e, 0), '', inline = 'c', group = ltf_group)
 var ltfc_style = input.string('Dotted', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'c', group = ltf_group)
 var ltfc_width = input.int(1, 'Width', minval = 1, inline = 'c', group = ltf_group)
 var ltfc_enabled = input.bool(true, 'Close', inline = 'c', group = ltf_group)
-var ltfohlc_col = input.color(color.new(#151e23, 70), '', inline = 'ohlc', group = ltf_group)
+var ltfohlc_col = input.color(color.new(#6b3e2e, 70), '', inline = 'ohlc', group = ltf_group)
 var ltfohlc_size = input.string('Auto', '', options = ['Auto', 'Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ohlc', group = ltf_group)
 var ltfohlc_enabled = input.bool(false, 'Prices', inline = 'ohlc', group = ltf_group)
 
 var ltfret_enabled = input.bool(false, 'Retracement Prices', group=ltf_group)
-var ltfret_max_col = input.color(color.new(#151e23, 0), '', inline = 'ret_max', group=ltf_group)
+var ltfret_max_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_max', group=ltf_group)
 var ltfret_max_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_max', group=ltf_group)
 var ltfret_max_enabled = input.bool(false, 'High (100%)', inline = 'ret_max', group=ltf_group)
-var ltfret_67_col = input.color(color.new(#151e23, 0), '', inline = 'ret_67', group=ltf_group)
+var ltfret_67_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_67', group=ltf_group)
 var ltfret_67_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_67', group=ltf_group)
 var ltfret_67_enabled = input.bool(false, '2/3 (66.67%)', inline = 'ret_67', group=ltf_group)
-var ltfret_50_col = input.color(color.new(#151e23, 0), '', inline = 'ret_50', group=ltf_group)
+var ltfret_50_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_50', group=ltf_group)
 var ltfret_50_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_50', group=ltf_group)
 var ltfret_50_enabled = input.bool(false, '1/2 (50%)', inline = 'ret_50', group=ltf_group)
-var ltfret_33_col = input.color(color.new(#151e23, 0), '', inline = 'ret_33', group=ltf_group)
+var ltfret_33_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_33', group=ltf_group)
 var ltfret_33_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_33', group=ltf_group)
 var ltfret_33_enabled = input.bool(false, '1/3 (33.33%)', inline = 'ret_33', group=ltf_group)
-var ltfret_min_col = input.color(color.new(#151e23, 0), '', inline = 'ret_min', group=ltf_group)
+var ltfret_min_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_min', group=ltf_group)
 var ltfret_min_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_min', group=ltf_group)
 var ltfret_min_enabled = input.bool(false, 'Low (0%)', inline = 'ret_min', group=ltf_group)
 
 var ltflines_enabled = input.bool(true, 'Retracement Lines', group=ltf_group)
 var ltflines_extend = input.bool(false, 'Extend to Right', group=ltf_group)
-var ltfline_max_col = input.color(color.new(#151e23, 0), '', inline = 'line_max', group=ltf_group)
+var ltfline_max_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_max', group=ltf_group)
 var ltfline_max_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_max', group=ltf_group)
 var ltfline_max_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_max', group=ltf_group)
 var ltfline_max_enabled = input.bool(true, 'High Line', inline = 'line_max', group=ltf_group)
-var ltfline_67_col = input.color(color.new(#151e23, 0), '', inline = 'line_67', group=ltf_group)
+var ltfline_67_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_67', group=ltf_group)
 var ltfline_67_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_67', group=ltf_group)
 var ltfline_67_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_67', group=ltf_group)
 var ltfline_67_enabled = input.bool(true, '2/3 Line', inline = 'line_67', group=ltf_group)
@@ -65,21 +65,21 @@ var ltfline_50_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_50', 
 var ltfline_50_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_50', group=ltf_group)
 var ltfline_50_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_50', group=ltf_group)
 var ltfline_50_enabled = input.bool(true, '1/2 Line', inline = 'line_50', group=ltf_group)
-var ltfline_33_col = input.color(color.new(#151e23, 0), '', inline = 'line_33', group=ltf_group)
+var ltfline_33_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_33', group=ltf_group)
 var ltfline_33_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_33', group=ltf_group)
 var ltfline_33_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_33', group=ltf_group)
 var ltfline_33_enabled = input.bool(true, '1/3 Line', inline = 'line_33', group=ltf_group)
-var ltfline_min_col = input.color(color.new(#151e23, 0), '', inline = 'line_min', group=ltf_group)
+var ltfline_min_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_min', group=ltf_group)
 var ltfline_min_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_min', group=ltf_group)
 var ltfline_min_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_min', group=ltf_group)
 var ltfline_min_enabled = input.bool(true, 'Low Line', inline = 'line_min', group=ltf_group)
 
 var ltfzones_enabled = input.bool(true, 'Retracement Zones', group=ltf_group)
 var ltfzones_extend = input.bool(false, 'Extend to Right', group=ltf_group)
-var ltfzone1_col = input.color(color.new(#151e23, 100), 'Zone 1 (High → 2/3)', group=ltf_group)
-var ltfzone2_col = input.color(color.new(#151e23, 84), 'Zone 2 (2/3 → 1/2)', group=ltf_group)
-var ltfzone3_col = input.color(color.new(#151e23, 84), 'Zone 3 (1/2 → 1/3)', group=ltf_group)
-var ltfzone4_col = input.color(color.new(#151e23, 100), 'Zone 4 (1/3 → Low)', group=ltf_group)
+var ltfzone1_col = input.color(color.new(#6b3e2e, 100), 'Zone 1 (High → 2/3)', group=ltf_group)
+var ltfzone2_col = input.color(color.new(#6b3e2e, 84), 'Zone 2 (2/3 → 1/2)', group=ltf_group)
+var ltfzone3_col = input.color(color.new(#6b3e2e, 84), 'Zone 3 (1/2 → 1/3)', group=ltf_group)
+var ltfzone4_col = input.color(color.new(#6b3e2e, 100), 'Zone 4 (1/3 → Low)', group=ltf_group)
 
 // (((((((((((((((((((((((((( HTF Candle Projection Inputs ))))))))))))))))))))))))))
 
@@ -94,50 +94,50 @@ var htfsize = input.string('Small', 'Size', options = ['Small', 'Medium', 'Large
 var htftype = input.string('Candles', 'Type', options = ['Candles', 'Heikin Ashi'], group = htf_group)
 var htfmargin = input.int(1, 'Margin', minval = 1, group = htf_group)
 var htf_data = input.string('Weekly', 'Use data to generate candles', options = ['Weekly', 'Always', 'Never'], group = htf_group)
-var htfup_col_wick = input.color(color.new(#151e23, 0), 'Up Wick', inline = 'Wicks', group = htf_group)
-var htfup_col_border = input.color(color.new(#151e23, 0), 'Up Border', inline = 'Wicks', group = htf_group)
-var htfdown_col_wick = input.color(color.new(#151e23, 0), 'Down Wick', inline = 'Wicks', group = htf_group)
-var htfdown_col_border = input.color(color.new(#151e23, 0), 'Down Border', inline = 'Wicks', group = htf_group)
-var htfo_col = input.color(color.new(#151e23, 0), '', inline = 'o', group = htf_group)
+var htfup_col_wick = input.color(color.new(#6b3e2e, 0), 'Up Wick', inline = 'Wicks', group = htf_group)
+var htfup_col_border = input.color(color.new(#6b3e2e, 0), 'Up Border', inline = 'Wicks', group = htf_group)
+var htfdown_col_wick = input.color(color.new(#6b3e2e, 0), 'Down Wick', inline = 'Wicks', group = htf_group)
+var htfdown_col_border = input.color(color.new(#6b3e2e, 0), 'Down Border', inline = 'Wicks', group = htf_group)
+var htfo_col = input.color(color.new(#6b3e2e, 0), '', inline = 'o', group = htf_group)
 var htfo_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'o', group = htf_group)
 var htfo_width = input.int(1, 'Width', minval = 1, inline = 'o', group = htf_group)
 var htfo_enabled = input.bool(true, 'Open', inline = 'o', group = htf_group)
-var htfhl_col = input.color(color.new(#151e23, 70), '', inline = 'hl', group = htf_group)
+var htfhl_col = input.color(color.new(#6b3e2e, 70), '', inline = 'hl', group = htf_group)
 var htfhl_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'hl', group = htf_group)
 var htfhl_width = input.int(1, 'Width', minval = 1, inline = 'hl', group = htf_group)
 var htfhl_enabled = input.bool(false, 'High/Low', inline = 'hl', group = htf_group)
-var htfc_col = input.color(color.new(#151e23, 0), '', inline = 'c', group = htf_group)
+var htfc_col = input.color(color.new(#6b3e2e, 0), '', inline = 'c', group = htf_group)
 var htfc_style = input.string('Dotted', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'c', group = htf_group)
-var htfc_width = input.int(2, 'Width', minval = 1, inline = 'c', group = htf_group)
+var htfc_width = input.int(1, 'Width', minval = 1, inline = 'c', group = htf_group)
 var htfc_enabled = input.bool(true, 'Close', inline = 'c', group = htf_group) 
-var htfohlc_col = input.color(color.new(#151e23, 70), '', inline = 'ohlc', group = htf_group)
+var htfohlc_col = input.color(color.new(#6b3e2e, 70), '', inline = 'ohlc', group = htf_group)
 var htfohlc_size = input.string('Auto', '', options = ['Auto', 'Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ohlc', group = htf_group)
 var htfohlc_enabled = input.bool(false, 'Prices', inline = 'ohlc', group = htf_group)
 
 var htfret_enabled = input.bool(false, 'Retracement Prices', group = htf_group)
-var htfret_max_col = input.color(color.new(#151e23, 0), '', inline = 'ret_max', group = htf_group)
+var htfret_max_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_max', group = htf_group)
 var htfret_max_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_max', group = htf_group)
 var htfret_max_enabled = input.bool(false, 'High (100%)', inline = 'ret_max', group = htf_group)
-var htfret_67_col = input.color(color.new(#151e23, 0), '', inline = 'ret_67', group = htf_group)
+var htfret_67_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_67', group = htf_group)
 var htfret_67_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_67', group = htf_group)
 var htfret_67_enabled = input.bool(false, '2/3 (66.67%)', inline = 'ret_67', group = htf_group)
-var htfret_50_col = input.color(color.new(#151e23, 0), '', inline = 'ret_50', group = htf_group)
+var htfret_50_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_50', group = htf_group)
 var htfret_50_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_50', group = htf_group)
 var htfret_50_enabled = input.bool(false, '1/2 (50%)', inline = 'ret_50', group = htf_group)
-var htfret_33_col = input.color(color.new(#151e23, 0), '', inline = 'ret_33', group = htf_group)
+var htfret_33_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_33', group = htf_group)
 var htfret_33_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_33', group = htf_group)
 var htfret_33_enabled = input.bool(false, '1/3 (33.33%)', inline = 'ret_33', group = htf_group)
-var htfret_min_col = input.color(color.new(#151e23, 0), '', inline = 'ret_min', group = htf_group)
+var htfret_min_col = input.color(color.new(#6b3e2e, 0), '', inline = 'ret_min', group = htf_group)
 var htfret_min_size = input.string('Small', '', options = ['Tiny', 'Small', 'Normal', 'Large', 'Huge'], inline = 'ret_min', group = htf_group)
 var htfret_min_enabled = input.bool(false, 'Low (0%)', inline = 'ret_min', group = htf_group)
 
 var htflines_enabled = input.bool(true, 'Retracement Lines', group = htf_group)
 var htflines_extend = input.bool(false, 'Extend to Right', group = htf_group)
-var htfline_max_col = input.color(color.new(#151e23, 0), '', inline = 'line_max', group = htf_group)
+var htfline_max_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_max', group = htf_group)
 var htfline_max_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_max', group = htf_group)
 var htfline_max_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_max', group = htf_group)
 var htfline_max_enabled = input.bool(true, 'High Line', inline = 'line_max', group = htf_group)
-var htfline_67_col = input.color(color.new(#151e23, 0), '', inline = 'line_67', group = htf_group)
+var htfline_67_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_67', group = htf_group)
 var htfline_67_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_67', group = htf_group)
 var htfline_67_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_67', group = htf_group)
 var htfline_67_enabled = input.bool(true, '2/3 Line', inline = 'line_67', group = htf_group)
@@ -145,27 +145,27 @@ var htfline_50_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_50', 
 var htfline_50_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_50', group = htf_group)
 var htfline_50_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_50', group = htf_group)
 var htfline_50_enabled = input.bool(true, '1/2 Line', inline = 'line_50', group = htf_group)
-var htfline_33_col = input.color(color.new(#151e23, 0), '', inline = 'line_33', group = htf_group)
+var htfline_33_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_33', group = htf_group)
 var htfline_33_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_33', group = htf_group)
 var htfline_33_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_33', group = htf_group)
 var htfline_33_enabled = input.bool(true, '1/3 Line', inline = 'line_33', group = htf_group)
-var htfline_min_col = input.color(color.new(#151e23, 0), '', inline = 'line_min', group = htf_group)
+var htfline_min_col = input.color(color.new(#6b3e2e, 0), '', inline = 'line_min', group = htf_group)
 var htfline_min_style = input.string('Solid', '', options = ['Solid', 'Dotted', 'Dashed'], inline = 'line_min', group = htf_group)
 var htfline_min_width = input.int(1, 'Width', minval = 1, maxval = 5, inline = 'line_min', group = htf_group)
 var htfline_min_enabled = input.bool(true, 'Low Line', inline = 'line_min', group = htf_group)
 
 var htfzones_enabled = input.bool(true, 'Retracement Zones', group = htf_group)
 var htfzones_extend = input.bool(false, 'Extend to Right', group = htf_group)
-var htfzone1_col = input.color(color.new(#151e23, 100), 'Zone 1 (High → 2/3)', group = htf_group)
-var htfzone2_col = input.color(color.new(#151e23, 84), 'Zone 2 (2/3 → 1/2)', group = htf_group)
-var htfzone3_col = input.color(color.new(#151e23, 84), 'Zone 3 (1/2 → 1/3)', group = htf_group)
-var htfzone4_col = input.color(color.new(#151e23, 100), 'Zone 4 (1/3 → Low)', group = htf_group)
+var htfzone1_col = input.color(color.new(#6b3e2e, 100), 'Zone 1 (High → 2/3)', group = htf_group)
+var htfzone2_col = input.color(color.new(#6b3e2e, 84), 'Zone 2 (2/3 → 1/2)', group = htf_group)
+var htfzone3_col = input.color(color.new(#6b3e2e, 84), 'Zone 3 (1/2 → 1/3)', group = htf_group)
+var htfzone4_col = input.color(color.new(#6b3e2e, 100), 'Zone 4 (1/3 → Low)', group = htf_group)
 
 // (((((((((((((((((((((((((( Period Separator Inputs ))))))))))))))))))))))))))
 
 PeriodSeparator_group = "========== Period Separator =========="
-PeriodSeparator_enable = input.bool(true, "Period Separator", group = PeriodSeparator_group)
-PeriodSeparator_color = input.color(#151e23, "Color", group = PeriodSeparator_group)
+PeriodSeparator_enable = input.bool(false, "Period Separator", group = PeriodSeparator_group)
+PeriodSeparator_color = input.color(color.new(#6b3e2e, 80), "Color", group = PeriodSeparator_group)
 PeriodSeparator_style = input.string("Dotted", "Style", options = ["Solid", "Dashed", "Dotted"], group = PeriodSeparator_group)
 PeriodSeparator_width = input.int(1, "Width", minval = 1, group = PeriodSeparator_group)
 PeriodSeparator_timeframe = input.timeframe("M", "Timeframe", group = PeriodSeparator_group)
@@ -202,8 +202,8 @@ candle_color_zone3_zone4_lower_bear = input.color(color.new(#000000, 0), "Z3-Z4 
 
 Vol_group = "========== Volume Signals =========="
 Vol_enable = input.bool(true, "Signals", group=Vol_group)
-Vol_bullsih_signal = input.string("˚", "Bullish Signal", group=Vol_group)
-Vol_bearish_signal = input.string("˚", "Bearish Signal", group=Vol_group)
+Vol_bullsih_signal = input.string("˙", "Bullish Signal", group=Vol_group)
+Vol_bearish_signal = input.string("˙", "Bearish Signal", group=Vol_group)
 Vol_bullsih_color = input.color(#ffffff, "Bullish Color", group=Vol_group)
 Vol_bearish_color = input.color(#000000, "Bearish Color", group=Vol_group)
 
@@ -216,76 +216,79 @@ TriggerAxis_src = input.source(close, title="Source", group = TriggerAxis_group)
 TriggerAxis_ema_len = input.int(2, minval=1, title="EMA Length", group = TriggerAxis_group)
 TriggerAxis_mult = input.float(1, minval=0.001, maxval=50, step=0.1, title="Multiplier", group = TriggerAxis_group)
 TriggerAxis_width = input.int(4, minval=1, maxval=4, title="Width", group = TriggerAxis_group)
-TriggerAxis_bullish_color = input.color(color.new(#0c3299, 85), title="Bullish Color", group = TriggerAxis_group)
-TriggerAxis_bearish_color = input.color(color.new(#801922, 85), title="Bearish Color", group = TriggerAxis_group)
-TriggerAxis_bullish_shadow_color = input.color(color.new(#81c784, 100), title="Bullish Shadow Color", group = TriggerAxis_group)
-TriggerAxis_bearish_shadow_color = input.color(color.new(#ffb74d, 100), title="Bearish Shadow Color", group = TriggerAxis_group)
+TriggerAxis_bullish_color = input.color(color.new(#ffffff, 70), title="Bullish Color", group = TriggerAxis_group)
+TriggerAxis_bearish_color = input.color(color.new(#000000, 70), title="Bearish Color", group = TriggerAxis_group)
+TriggerAxis_bullish_shadow_color = input.color(color.new(#b8b8b8, 100), title="Bullish Shadow Color", group = TriggerAxis_group)
+TriggerAxis_bearish_shadow_color = input.color(color.new(#b8b8b8, 100), title="Bearish Shadow Color", group = TriggerAxis_group)
 TriggerAxis_enable_signals = input.bool(true, title="Signals", group = TriggerAxis_group)
+TriggerAxis_bullish_signal_color = input.color(color.new(#ffffff, 0), "Bullish Signal Color", group=TriggerAxis_group)
+TriggerAxis_bearish_signal_color = input.color(color.new(#000000, 0), "Bearish Signal Color", group=TriggerAxis_group)
+TriggerAxis_neutral_signal_color = input.color(color.new(#b8b8b8, 0), "Neutral Signal Color", group=TriggerAxis_group)
 
 // (((((((((((((((((((((((((( Trail Zone Inputs ))))))))))))))))))))))))))
 
 TrailZone_group = "========== Trail Axis =========="
-TrailZone_enabled = input.bool(true,  "Trail Zone", group=TrailZone_group)
-TrailAxis_enabled = input.bool(true, "Trail Axis", group=TrailZone_group)
+TrailZone_enabled = input.bool(false,  "Trail Zone", group=TrailZone_group)
+TrailAxis_enabled = input.bool(false, "Trail Axis", group=TrailZone_group)
 TrailZone_atr_len = input.int(26, "ATR Period", minval=1, group=TrailZone_group)
 TrailZone_atr_mult = input.float(0.5, "ATR Multiplier", minval=0.01, step=0.05, group=TrailZone_group)
-TrailAxis_width = input.int(2, "Width", minval=1, maxval=4, group=TrailZone_group)
-TrailZone_transp = input.int(80, "Fill Transparency (0-100)", minval=0, maxval=100, group=TrailZone_group)
-TrailAxis_bullish = input.color(#bbd9fb, "Bullish Color", group=TrailZone_group)
-TrailAxis_bearish = input.color(#fccbcd, "Bearish Color", group=TrailZone_group)
+TrailAxis_width = input.int(1, "Width", minval=1, maxval=4, group=TrailZone_group)
+TrailZone_transp = input.int(88, "Fill Transparency (0-100)", minval=0, maxval=100, group=TrailZone_group)
+TrailAxis_bullish = input.color(#ffffff, "Bullish Color", group=TrailZone_group)
+TrailAxis_bearish = input.color(#000000, "Bearish Color", group=TrailZone_group)
 TrailAxis_enable_Signals = input.bool(true, title="Signals", group=TrailZone_group)
-TrailAxis_candles_crossing_bullish = input.color(#ffffff, title="Trail Axis x Candles Bullish Signal Color", group=TrailZone_group)
-TrailAxis_candles_crossing_bearish = input.color(#000000, title="Trail Axis x Candles Bearish Signal Color", group=TrailZone_group)
-TrailAxis_transition_alpha_crossing_bullish = input.color(#ffffff, title="Trail Axis x Transition Alpha Bullish Signal Color", group=TrailZone_group)
-TrailAxis_transition_alpha_crossing_bearish = input.color(#000000, title="Trail Axis x Transition Alpha Bearish Signal Color", group=TrailZone_group)
+TrailAxis_candles_crossing_bullish = input.color(#bbd9fb, title="Trail Axis x Candles Bullish Signal Color", group=TrailZone_group)
+TrailAxis_candles_crossing_bearish = input.color(#fccbcd, title="Trail Axis x Candles Bearish Signal Color", group=TrailZone_group)
 TrailAxis_transition_omega_crossing_bullish = input.color(#ffffff, title="Trail Axis x Transition Omega Bullish Signal Color", group=TrailZone_group)
 TrailAxis_transition_omega_crossing_bearish = input.color(#000000, title="Trail Axis x Transition Omega Bearish Signal Color", group=TrailZone_group)
 
 // (((((((((((((((((((((((((( Trial Zone Inputs ))))))))))))))))))))))))))
 
 TrialZone_group = "========== Trial Zone =========="
-TrialZone_enable = input.bool(true, "Trial Zone", group=TrialZone_group)
-TrialAxis_enabled = input.bool(true, "Trial Axis", group=TrialZone_group)
+TrialZone_enable = input.bool(false, "Trial Zone", group=TrialZone_group)
+TrialAxis_enabled = input.bool(false, "Trial Axis", group=TrialZone_group)
 TrialZone_conversion = input.int(9,  minval=1, title="Conversion", group=TrialZone_group)
 TrialZone_base = input.int(9, minval=1, title="Base", group=TrialZone_group)
 TrialZone_displacement = input.int(26, minval=1, title="Displacement", group=TrialZone_group)
 TrialZone_Lagging = input.int(1,  minval=1, title="Lagging", group=TrialZone_group)
-TrialAxis_width = input.int(2, "Width", minval=1, maxval=4, group=TrialZone_group)
-TrialZone_transp = input.int(80, "Fill Transparency (0-100)", minval=0, maxval=100, group=TrialZone_group)
-TrialZone_bullish = input.color(#bbd9fb, "Bullish Color", group=TrialZone_group)
-TrialZone_bearish = input.color(#fccbcd, "Bearish Color", group=TrialZone_group)
+TrialAxis_width = input.int(1, "Width", minval=1, maxval=4, group=TrialZone_group)
+TrialZone_transp = input.int(93, "Fill Transparency (0-100)", minval=0, maxval=100, group=TrialZone_group)
+TrialZone_bullish = input.color(#ffffff, "Bullish Color", group=TrialZone_group)
+TrialZone_bearish = input.color(#000000, "Bearish Color", group=TrialZone_group)
 
 // (((((((((((((((((((((((((( Core Zone Inputs ))))))))))))))))))))))))))
 
 CoreZone_group = "========== Core Zone =========="
-CoreZone_enable = input.bool(true, "Core Zone", group=CoreZone_group)
+CoreZone_enable = input.bool(false, "Core Zone", group=CoreZone_group)
 CoreAxis_enabled = input.bool(true, "Core Axis", group=CoreZone_group)
-CoreAxis_width = input.int(2, "Width", minval=1, maxval=4, group=CoreZone_group)
-CoreZone_bullish_fill = input.color(color.new(#bbd9fb, 80), "Bullish Fill", group=CoreZone_group)
-CoreZone_bearish_fill = input.color(color.new(#fccbcd, 80), "Bearish Fill", group=CoreZone_group)
-CoreAxis_bullish_color = input.color(color.new(#0c3299, 30), "Bullish Color", group=CoreZone_group)
-CoreAxis_bearish_color = input.color(color.new(#801922, 30), "Bearish Color", group=CoreZone_group)
+CoreAxis_width = input.int(4, "Width", minval=1, maxval=4, group=CoreZone_group)
+CoreZone_bullish_fill = input.color(color.new(#ffffff, 88), "Bullish Fill", group=CoreZone_group)
+CoreZone_bearish_fill = input.color(color.new(#000000, 88), "Bearish Fill", group=CoreZone_group)
+CoreAxis_bullish_color = input.color(color.new(#ffffff, 70), "Bullish Color", group=CoreZone_group)
+CoreAxis_bearish_color = input.color(color.new(#000000, 70), "Bearish Color", group=CoreZone_group)
+CoreZone_Twist_bullish_color = input.color(color.new(#0c3299, 0), "Bullish Signal Color", group=CoreZone_group)
+CoreZone_Twist_bearish_color = input.color(color.new(#801922, 0), "Bearish Signal Color", group=CoreZone_group)
 
 // (((((((((((((((((((((((((( Transition Zone Inputs ))))))))))))))))))))))))))
 
 TransitionZone_group = "========== Transition Zone =========="
-TransitionZone_enable = input.bool(true, "Transition Zone", group=TransitionZone_group)
-TransitionAxis_enabled = input.bool(true, "Transition Axis", group=TransitionZone_group)
+TransitionZone_enable = input.bool(false, "Transition Zone", group=TransitionZone_group)
+TransitionAxis_enabled = input.bool(false, "Transition Axis", group=TransitionZone_group)
 TransitionZone_conversion = input.int(9,  minval=1, title="Conversion", group=TransitionZone_group)
 TransitionZone_base = input.int(26, minval=1, title="Base", group=TransitionZone_group)
 TransitionZone_displacement = input.int(52, minval=1, title="Displacement", group=TransitionZone_group)
 TransitionZone_lagging = input.int(26, minval=1, title="Lagging", group=TransitionZone_group)
-TransitionAxis_width = input.int(2, "Width", minval=1, maxval=4, group=TransitionZone_group)
-TransitionZone_transp = input.int(80, "Fill Transparency (0-100)", minval=0, maxval=100, group=TransitionZone_group)
-TransitionZone_bullish = input.color(#bbd9fb, "Bullish Color", group=TransitionZone_group)
-TransitionZone_bearish = input.color(#fccbcd, "Bearish Color", group=TransitionZone_group)
+TransitionAxis_width = input.int(1, "Width", minval=1, maxval=4, group=TransitionZone_group)
+TransitionZone_transp = input.int(93, "Fill Transparency (0-100)", minval=0, maxval=100, group=TransitionZone_group)
+TransitionZone_bullish = input.color(#ffffff, "Bullish Color", group=TransitionZone_group)
+TransitionZone_bearish = input.color(#000000, "Bearish Color", group=TransitionZone_group)
 TransitionZone_enable_signals = input.bool(true, "Signals", group=TransitionZone_group)
 TransitionZone_bullish_signal_color = input.color(color.new(#ffffff, 0), "Bullish Signal Color", group=TransitionZone_group)
 TransitionZone_bearish_signal_color = input.color(color.new(#000000, 0), "Bearish Signal Color", group=TransitionZone_group)
 TransitionZone_neutral_signal_color = input.color(color.new(#b8b8b8, 0), "Neutral Signal Color", group=TransitionZone_group)
 Candles_TransitionOmega_crossing_signal_enabled = input.bool(true, "Candles X Transition Omega Signals", group=TransitionZone_group)
-Candles_transitionomega_crossing_bullish = input.color(color.new(#ffffff, 0), "Candles X Transition Omega Bullish Signal Color", group=TransitionZone_group)
-Candles_TransitionOmega_crossing_bearish = input.color(color.new(#000000, 0), "Candles X Transition Omega Bearish Signal Color", group=TransitionZone_group)
+Candles_transitionomega_crossing_bullish = input.color(color.new(#3179f5, 0), "Candles X Transition Omega Bullish Signal Color", group=TransitionZone_group)
+Candles_TransitionOmega_crossing_bearish = input.color(color.new(#f7525f, 0), "Candles X Transition Omega Bearish Signal Color", group=TransitionZone_group)
 
 // (((((((((((((((((((((((((( Unified Calculation ))))))))))))))))))))))))))
 
@@ -357,6 +360,8 @@ TrialAxis = math.avg(TrialAlpha, TrialOmega)
 is_bullish_TrialZone = TrialAlpha > TrialOmega
 is_bearish_TrialZone = TrialAlpha < TrialOmega
 is_neutral_TrialZone = TrialAlpha == TrialOmega
+TrailAxis_x_TrialOmega_bullish = ta.crossover(TrailAxis_current, UniCal_trialomega_source[25])
+TrailAxis_x_TrialOmega_bearish = ta.crossunder(TrailAxis_current, UniCal_trialomega_source[25])
 
 // (((((((((((((((((((((((((( Transition Zone Calculation ))))))))))))))))))))))))))
 
@@ -371,6 +376,8 @@ is_bearish_TransitionZone = TransitionAlpha < TransitionOmega
 is_neutral_TransitionZone = TransitionAlpha == TransitionOmega
 candles_transitionomega_bull = ta.crossover(close, TransitionOmega[TransitionZone_lagging - 1])
 candles_transitionomega_bear = ta.crossunder(close, TransitionOmega[TransitionZone_lagging - 1])
+candles_trialomega_bull = ta.crossover(close, TrialOmega[TrialZone_Lagging - 1])
+candles_trialomega_bear = ta.crossunder(close, TrialOmega[TrialZone_Lagging - 1])
 
 // (((((((((((((((((((((((((( Core Zone Calculation ))))))))))))))))))))))))))
 
@@ -378,6 +385,10 @@ CoreZone_Twist_bullish = ta.crossover(TrialAxis[0], TransitionAxis[TransitionZon
 CoreZone_Twist_bearish = ta.crossunder(TrialAxis[0], TransitionAxis[TransitionZone_lagging - 1])
 CoreAxis = math.avg(TrialAxis, TransitionAxis[TransitionZone_lagging - 1])
 CoreAxis_color = TrialAxis > TransitionAxis[TransitionZone_lagging - 1] ? CoreAxis_bullish_color : CoreAxis_bearish_color 
+TrailAxis_x_CoreAxis_bullish = ta.crossover(TrailAxis_current, CoreAxis[25])
+TrailAxis_x_CoreAxis_bearish = ta.crossunder(TrailAxis_current, CoreAxis[25])
+candles_coreaxis_bull = ta.crossover(close, CoreAxis)
+candles_coreaxis_bear = ta.crossunder(close, CoreAxis)
 
 // (((((((((((((((((((((((((( Helper Sources Functions ))))))))))))))))))))))))))
 
@@ -679,22 +690,15 @@ getCCPColorhtf(candle_closehtf, candle_openhtf, use_htf_zone = false) =>
 // (((((((((((((((((((((((((( State Control Variables ))))))))))))))))))))))))))
 
 var int signal_state_trailaxis_candles = 0
-var int signal_state_trailaxis_transitionalpha = 0
 var int signal_state_trailaxis_transitionomega = 0
 var int signal_state_corezonetwist = 0
 var int signal_state_candles_transitionomega = 0
 var int signal_state_triggeraxis = 0
-var int signal_state_TrialZone = 0
 var int signal_state_TransitionZone = 0
 
-var int last_state_transitionzone = 0
-var int last_state_trailaxis_transitionomega = 0
-var int last_state_trailaxis_transitionalpha = 0
-var int last_state_trailaxis_candles = 0
 
 var string lasttrailaxisState = na
 var string lasttrailaxisXtransitionomegaState = na
-var string lastconvergenceState = na
 var string lastcandleprogressionState = na
 var string lastcorezonetwistState = na
 var string lastCandlesTransitionOmegaState = na
@@ -714,13 +718,6 @@ else if TriggerAxis_color_bearish
     signal_state_triggeraxis := -1
 else if TriggerAxis_price < TriggerAxis_bullish and TriggerAxis_price > TriggerAxis_bearish
     signal_state_triggeraxis := 0
-    
-// (((((((((((((((((((((((((( Trail Axis x Transition Alpha Signals ))))))))))))))))))))))))))
-
-if TrailAxis_x_Transition_Alpha_bullish
-    signal_state_trailaxis_transitionalpha := 1
-else if TrailAxis_x_Transition_Alpha_bearish
-    signal_state_trailaxis_transitionalpha := -1
 
 // (((((((((((((((((((((((((( Trail Axis x Transition Omega Signals ))))))))))))))))))))))))))
 
@@ -735,15 +732,6 @@ if candles_transitionomega_bull
     signal_state_candles_transitionomega := 1
 else if candles_transitionomega_bear
     signal_state_candles_transitionomega := -1
-
-// (((((((((((((((((((((((((( Trial Zone Signals ))))))))))))))))))))))))))
-
-if is_bullish_TrialZone
-    signal_state_TrialZone := 1
-else if is_bearish_TrialZone
-    signal_state_TrialZone := -1
-else if is_neutral_TrialZone
-    signal_state_TrialZone := 0
     
 // (((((((((((((((((((((((((( Core Zone Twist Signals )))))))))))))))))))))))))) 
 
@@ -832,34 +820,6 @@ CoreZoneTwist_bullish = CoreZone_TwistStateChanged and currentCoreZone_TwistStat
 CoreZoneTwist_bearish = CoreZone_TwistStateChanged and currentCoreZone_TwistState == "Lower"
 CoreZoneTwist = CoreZoneTwist_bullish or CoreZoneTwist_bearish
 
-// (((((((((((((((((((((((((( Convergence Alerts Logic ))))))))))))))))))))))))))
-
-transitionzone_changed = signal_state_TransitionZone != last_state_transitionzone and signal_state_TransitionZone != 0
-trailaxis_transitionomega_changed = signal_state_trailaxis_transitionomega != last_state_trailaxis_transitionomega and signal_state_trailaxis_transitionomega != 0
-trailaxis_transitionalfa_changed = signal_state_trailaxis_transitionalpha != last_state_trailaxis_transitionalpha and signal_state_trailaxis_transitionalpha != 0
-trailaxis_candles_changed = signal_state_trailaxis_candles != last_state_trailaxis_candles and signal_state_trailaxis_candles != 0
-
-if transitionzone_changed
-    last_state_transitionzone := signal_state_TransitionZone
-if trailaxis_transitionomega_changed
-    last_state_trailaxis_transitionomega := signal_state_trailaxis_transitionomega
-if trailaxis_transitionalfa_changed
-    last_state_trailaxis_transitionalpha := signal_state_trailaxis_transitionalpha
-if trailaxis_candles_changed
-    last_state_trailaxis_candles := signal_state_trailaxis_candles
-
-Convergence_upper = (signal_state_TransitionZone == 1) and (signal_state_candles_transitionomega == 1) and (signal_state_trailaxis_transitionomega == 1) and (signal_state_trailaxis_transitionalpha == 1) and (signal_state_trailaxis_candles == 1)
-Convergence_lower = (signal_state_TransitionZone == -1) and (signal_state_candles_transitionomega == -1) and (signal_state_trailaxis_transitionomega == -1) and (signal_state_trailaxis_transitionalpha == -1) and (signal_state_trailaxis_candles == -1)
-currentConvergenceState = Convergence_upper ? "Upper" : Convergence_lower ? "Lower" : lastconvergenceState
-ConvergenceChanged = currentConvergenceState != lastconvergenceState and not na(currentConvergenceState)
-
-if ConvergenceChanged
-    lastconvergenceState := currentConvergenceState
-
-Convergence_Bullish = ConvergenceChanged and currentConvergenceState == "Upper"
-Convergence_Bearish = ConvergenceChanged and currentConvergenceState == "Lower"
-Convergence = Convergence_Bullish or Convergence_Bearish
-
 // (((((((((((((((((((((((((( Plots Lines/Fills ))))))))))))))))))))))))))
 
 trailAlfa = plot(TrailZone_enabled ? TrailAlfa : na, offset = -TrailAxis_lagging + 1, color = TrailAxis_color, title = "Trail Alfa")
@@ -887,22 +847,26 @@ plot_triggeraxi_bearish = plot(TriggerAxis_enabled ? TriggerAxis_bearish : na, c
 
 plotchar(volBullish, title="Bullish Volume Signal", char=Vol_bullsih_signal, location=location.bottom, color=Vol_bullsih_color, size=size.small)
 plotchar(volBearish, title="Bearish Volume Signal", char=Vol_bearish_signal, location=location.bottom, color=Vol_bearish_color, size=size.small)
-plotchar(CoreZone_Twist_bullish, "Core Zone Twist Bullish", "⏺", location.bottom, #ffffff, size=size.small)
-plotchar(CoreZone_Twist_bearish, "Core Zone Twist Bearish", "⏺", location.bottom, #000000, size=size.small)    
-plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == 1, title="Transition Zone Bullish Signal", char="⦁", location=location.bottom, color=TransitionZone_bullish_signal_color, size=size.small)
-plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == -1, title="Transition Zone Bearish Signal", char="⦁", location=location.bottom, color=TransitionZone_bearish_signal_color, size=size.small)
-plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == 0, title="Transition Zone Neutral Signal", char="⦁", location=location.bottom, color=TransitionZone_neutral_signal_color, size=size.small)
-plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == 1, "Trigger Axis Bullish Signal", "∙", location.bottom, #ffffff, size=size.small)
-plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == -1, "Trigger Axis Bearish Signal", "∙", location.bottom, #000000, size=size.small)
-plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == 0, "Trigger Axis Neutral Signal", "∙", location.bottom, #b8b8b8, size=size.small)
-plotchar(Candles_TransitionOmega_crossing_signal_enabled and signal_state_candles_transitionomega == 1, title="Candles x Transition Omega Bullish Signal", char="⎺", location=location.bottom, color=Candles_transitionomega_crossing_bullish, size=size.tiny)
-plotchar(Candles_TransitionOmega_crossing_signal_enabled and signal_state_candles_transitionomega == -1, title="Candles x Transition Omega Bearish Signal", char="⎺", location=location.bottom, color=Candles_TransitionOmega_crossing_bearish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionomega == 1, title="Trail Axis x Transition Omega Bullish Signal", char="⎻", location=location.bottom, color=TrailAxis_transition_omega_crossing_bullish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionomega == -1, title="Trail Axis x Transition Omega Bearish Signal", char="⎻", location=location.bottom, color=TrailAxis_transition_omega_crossing_bearish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionalpha == 1, title="Trail Axis x Transition Alfa Bullish Signal", char="⎼", location=location.bottom, color=TrailAxis_transition_alpha_crossing_bullish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionalpha == -1, title="Trail Axis x Transition Alfa Bearish Signal", char="⎼", location=location.bottom, color=TrailAxis_transition_alpha_crossing_bearish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_candles == 1, title="Trail Axis x Candles Bullish Signal", char="⎽", location=location.bottom, color=TrailAxis_candles_crossing_bullish, size=size.tiny)
-plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_candles == -1, title="Trail Axis x Candles Bearish Signal", char="⎽", location=location.bottom, color=TrailAxis_candles_crossing_bearish, size=size.tiny)
+
+plotchar(CoreZone_Twist_bullish, "Core Zone Twist Bullish", "●", location.bottom, color=CoreZone_Twist_bullish_color, size=size.small)
+plotchar(CoreZone_Twist_bearish, "Core Zone Twist Bearish", "●", location.bottom, color=CoreZone_Twist_bearish_color, size=size.small)    
+
+plotchar(Candles_TransitionOmega_crossing_signal_enabled and candles_transitionomega_bull, title="Candles x Transition Omega Bullish Signal", char="⦁", location=location.bottom, color=Candles_transitionomega_crossing_bullish, size=size.small)
+plotchar(Candles_TransitionOmega_crossing_signal_enabled and candles_transitionomega_bear, title="Candles x Transition Omega Bearish Signal", char="⦁", location=location.bottom, color=Candles_TransitionOmega_crossing_bearish, size=size.small)
+
+plotchar(TrailAxis_enable_Signals and TrailAxisCandlesCrossing_bullish, title="Trail Axis x Candles Bullish Signal", char="∙", location=location.bottom, color=TrailAxis_candles_crossing_bullish, size=size.small)
+plotchar(TrailAxis_enable_Signals and TrailAxisCandlesCrossing_bearish, title="Trail Axis x Candles Bearish Signal", char="∙", location=location.bottom, color=TrailAxis_candles_crossing_bearish, size=size.small)
+
+plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionomega == 1, title="Trail Axis x Transition Omega Bullish Signal", char="▮", location=location.bottom, color=TrailAxis_transition_omega_crossing_bullish, size=size.tiny)
+plotchar(TrailAxis_enable_Signals and signal_state_trailaxis_transitionomega == -1, title="Trail Axis x Transition Omega Bearish Signal", char="▮", location=location.bottom, color=TrailAxis_transition_omega_crossing_bearish, size=size.tiny)
+
+plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == 1, title="Transition Zone Bullish Signal", char="∎", location=location.bottom, color=TransitionZone_bullish_signal_color, size=size.tiny)
+plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == -1, title="Transition Zone Bearish Signal", char="∎", location=location.bottom, color=TransitionZone_bearish_signal_color, size=size.tiny)
+plotchar(TransitionZone_enable_signals and signal_state_TransitionZone == 0, title="Transition Zone Neutral Signal", char="∎", location=location.bottom, color=TransitionZone_neutral_signal_color, size=size.tiny)
+
+plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == 1, "Trigger Axis Bullish Signal", "•", location.bottom, color=TriggerAxis_bullish_signal_color, size=size.tiny)
+plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == -1, "Trigger Axis Bearish Signal", "•", location.bottom, color=TriggerAxis_bearish_signal_color, size=size.tiny)
+plotchar(TriggerAxis_enable_signals and signal_state_triggeraxis == 0, "Trigger Axis Neutral Signal", "•", location.bottom, color=TriggerAxis_neutral_signal_color, size=size.tiny)
 
 // (((((((((((((((((((((((((( LTF Candle Projection Function ))))))))))))))))))))))))))
 
@@ -1876,20 +1840,6 @@ htf_any = htf_max or htf_67 or htf_50 or htf_33 or htf_min
 
 // (((((((((((((((((((((((((( Alerts Conditions ))))))))))))))))))))))))))
 
-//alertcondition(candleProgressionChanged and currentCandleProgressionState == "BullZ2Z3", title="CCP_Z2Z3_bullish", message="CCP_Z2Z3_bullish {{ticker}} {{interval}}")
-//alertcondition(candleProgressionChanged and currentCandleProgressionState == "BearZ2Z3", title="CCP_Z2Z3_bearish", message="CCP_Z2Z3_bearish {{ticker}} {{interval}}")
-//alertcondition(candleProgressionChanged and currentCandleProgressionState == "BullZ3Z4", title="CCP_Z3Z4_bullish", message="CCP_Z3Z4_bullish {{ticker}} {{interval}}")
-//alertcondition(candleProgressionChanged and currentCandleProgressionState == "BearZ3Z4", title="CCP_Z3Z4_bearish", message="CCP_Z3Z4_bearish {{ticker}} {{interval}}")
-//alertcondition(CandleProgressionSignal, title="CandleProgression", message="CandleProgression {{ticker}} {{interval}}")
-//alertcondition(CoreZoneTwist_bullish, title="Core Zone Twist Bullish", message="Core Zone Twist Bullish {{ticker}} {{interval}}")
-//alertcondition(CoreZoneTwist_bearish, title="Core Zone Twist Bearish", message="Core Zone Twist Bearish {{ticker}} {{interval}}")
-//alertcondition(TrailAxisCandlesCrossing_bullish, title="Trail Axis X Candles Bullish", message="Trail Axis X Candles Bullish {{ticker}} {{interval}}")
-//alertcondition(TrailAxisCandlesCrossing_bearish, title="Trail Axis X Candles Bearish", message="Trail Axis X CandlesBearish {{ticker}} {{interval}}")
-//alertcondition(TrailaxisXtransitionomega_bullish, title="Trail Axis X Trasition Omega Bullish", message="Trail Axis X Trasition Omega Bullish {{ticker}} {{interval}}")
-//alertcondition(TrailaxisXtransitionomega_bearish, title="Trail Axis X Trasition Omega Bearish", message="Trail Axis X Trasition Omega Bearish {{ticker}} {{interval}}")
-//alertcondition(Convergence_Bullish, title="Convergence Bullish", message="Convergence Bullish {{ticker}} {{interval}}")
-//alertcondition(Convergence_Bearish, title="Convergence Bearish", message="Convergence Bearish {{ticker}} {{interval}}")
-//alertcondition(Convergence, title="Convergence", message="Convergence {{ticker}} {{interval}}")
 //alertcondition(htf_any, title="HTF Retc", message="HTF Retc {{ticker}} {{interval}}")
 //alertcondition(htf_max, title="HTF High", message="HTF High {{ticker}} {{interval}}")
 //alertcondition(htf_min, title="HTF Low", message="HTF Low {{ticker}} {{interval}}")
@@ -1903,17 +1853,23 @@ htf_any = htf_max or htf_67 or htf_50 or htf_33 or htf_min
 //alertcondition(ltf_50,  title="LTF 50%", message="LTF 50% {{ticker}} {{interval}}")
 //alertcondition(ltf_33,  title="LTF 33%", message="LTF 33% {{ticker}} {{interval}}")
 //alertcondition(ltf_any or htf_any, title="Retc", message="Retc {{ticker}} {{interval}}")
+//alertcondition(TrailAxisCandlesCrossing, title="First Cross", message="First Cross {{ticker}} {{interval}}")
+//alertcondition(CandlesTransitionOmegaCrossing, title="BreakOut", message="BreakOut {{ticker}} {{interval}}")
+//alertcondition(TrailaxisTransitionOmegaCrossing, title="Last Cross", message="Last Cross {{ticker}} {{interval}}")
+//alertcondition(CoreZoneTwist, title="Twist", message="Twist {{ticker}} {{interval}}")
 
-// (((((((((((((((((((((((((( Alerts Conditions Active ))))))))))))))))))))))))))
+// =========================
+// SINGLE UNIFIED ALERT
+// =========================
 
-alertcondition(CoreZoneTwist, title="Twist", message="Twist {{ticker}} {{interval}}")
-alertcondition(TrailAxisCandlesCrossing, title="First Cross", message="First Cross {{ticker}} {{interval}}")
-alertcondition(TrailaxisTransitionOmegaCrossing, title="Last Cross", message="Last Cross {{ticker}} {{interval}}")
-alertcondition(CandlesTransitionOmegaCrossing, title="BreakOut", message="BreakOut {{ticker}} {{interval}}")
+azas_alert_signal = CoreZoneTwist ? "Twist" : TrailAxisCandlesCrossing ? "First Cross" : CandlesTransitionOmegaCrossing ? "BreakOut" : "none"
+azas_alert_direction = CoreZoneTwist_bullish ? "Bull" : CoreZoneTwist_bearish ? "Bear" : TrailAxisCandlesCrossing_bullish ? "Bull" : TrailAxisCandlesCrossing_bearish ? "Bear" : CandlesTransitionOmega_bullish ? "Bull" : CandlesTransitionOmega_bearish ? "Bear" : "none"
+azas_alert_ccp = CCP_Z2Z3_bullish ? "BullZ2Z3" : CCP_Z2Z3_bearish ? "BearZ2Z3" : CCP_Z3Z4_bullish ? "BullZ3Z4" : CCP_Z3Z4_bearish ? "BearZ3Z4" : "none"
+azas_any_alert = CoreZoneTwist or TrailAxisCandlesCrossing or CandlesTransitionOmegaCrossing
+
+if azas_any_alert
+    alert('{"' + syminfo.ticker + '"/' + '"' + azas_alert_signal + '"/' + '"' + azas_alert_direction + '"/' + '"' + azas_alert_ccp + '"/' + '"' + timeframe.period + '"/' + '"' + str.tostring(close) + '}', alert.freq_once_per_bar_close)
 
 
 
-
-
-
-
+    
