@@ -25,21 +25,36 @@ dec_col = input.color(color.new(#6b3e2e, 0), "December", group = avwap_group)
 
 // (((((((((((((((((((((((((( Monthly AVWAP Logic ))))))))))))))))))))))))))
 
-current_year = year(timenow, syminfo.timezone)
-monthly_time = time("M")
-monthly_year = year(monthly_time, syminfo.timezone)
-monthly_month = month(monthly_time, syminfo.timezone)
-new_month = timeframe.change("M")
-show_on_monthly_or_lower = timeframe.in_seconds(timeframe.period) <= timeframe.in_seconds("M")
+ms_in_day = 24 * 60 * 60 * 1000
 
-getMonthlyAvwap(month_number) =>
-    is_active = show_on_monthly_or_lower and monthly_year == current_year and monthly_month >= month_number
-    cumulative_price_volume = ta.cum(is_active ? avwap_source * volume : 0.0)
-    cumulative_volume = ta.cum(is_active ? volume : 0.0)
-    cumulative_volume > 0 ? cumulative_price_volume / cumulative_volume : na
+getSymbolPeriodTimes(simple string period_timeframe) =>
+    request.security(syminfo.tickerid, period_timeframe, [time, time_close], lookahead = barmerge.lookahead_on)
+
+getRepresentedPeriodTime(int period_open_time, int period_close_time) =>
+    na(period_close_time) ? period_open_time + 15 * ms_in_day : period_open_time + int(math.round((period_close_time - period_open_time) / 2.0))
+
+current_year = year(timenow, syminfo.timezone)
+[monthly_live_time, monthly_close_time] = getSymbolPeriodTimes("M")
+monthly_represented_time = getRepresentedPeriodTime(monthly_live_time, monthly_close_time)
+monthly_year = year(monthly_represented_time, syminfo.timezone)
+monthly_month = month(monthly_represented_time, syminfo.timezone)
+new_month = ta.change(monthly_live_time) != 0
+show_on_monthly_or_lower = timeframe.in_seconds(timeframe.period) <= timeframe.in_seconds("M")
 
 isMonthlyAnchor(month_number) =>
     show_on_monthly_or_lower and new_month and monthly_year == current_year and monthly_month == month_number
+
+bar_weight = na(volume) or volume <= 0 ? 1.0 : volume
+cumulative_price_volume = ta.cum(avwap_source * bar_weight)
+cumulative_volume = ta.cum(bar_weight)
+
+getMonthlyAvwap(simple int month_number) =>
+    month_anchor = isMonthlyAnchor(month_number)
+    anchor_price_volume = ta.valuewhen(month_anchor, nz(cumulative_price_volume[1], 0.0), 0)
+    anchor_volume = ta.valuewhen(month_anchor, nz(cumulative_volume[1], 0.0), 0)
+    active_volume = cumulative_volume - anchor_volume
+    is_active = show_on_monthly_or_lower and monthly_year == current_year and monthly_month >= month_number and not na(anchor_price_volume) and not na(anchor_volume) and active_volume > 0
+    is_active ? (cumulative_price_volume - anchor_price_volume) / active_volume : na
 
 jan_avwap = getMonthlyAvwap(1)
 feb_avwap = getMonthlyAvwap(2)
