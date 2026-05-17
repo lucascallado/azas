@@ -18,17 +18,17 @@ week_4_col = input.color(color.new(#6b3e2e, 0), "4 Weeks Ago", group = avwap_gro
 
 // (((((((((((((((((((((((((( Weekly AVWAP Logic ))))))))))))))))))))))))))
 
-weekly_time = time("W")
+weekly_time = request.security(syminfo.tickerid, "W", time, lookahead = barmerge.lookahead_on)
 weekly_year = year(weekly_time, syminfo.timezone)
-weekly_week = math.min(52, weekofyear(weekly_time, syminfo.timezone))
+weekly_week = weekofyear(weekly_time, syminfo.timezone)
 latest_year = year(last_bar_time, syminfo.timezone)
-latest_week = math.min(52, weekofyear(last_bar_time, syminfo.timezone))
-new_week = timeframe.change("W")
+latest_week = weekofyear(last_bar_time, syminfo.timezone)
+new_week = ta.change(weekly_time) != 0
 show_on_weekly_or_lower = timeframe.in_seconds(timeframe.period) <= timeframe.in_seconds("W")
 start_new_week = show_on_weekly_or_lower and (new_week or na(weekly_time[1]))
 
 getWeekId(year_number, week_number) =>
-    year_number * 52 + week_number
+    year_number * 53 + week_number
 
 weekly_id = getWeekId(weekly_year, weekly_week)
 latest_week_id = getWeekId(latest_year, latest_week)
@@ -49,8 +49,14 @@ rolling_week_2_avwap = getWeeklyAvwap(2)
 rolling_week_3_avwap = getWeeklyAvwap(3)
 rolling_week_4_avwap = getWeeklyAvwap(4)
 
+var bool is_forex = false
+if new_week and dayofweek(time, syminfo.timezone) == dayofweek.sunday
+    is_forex := true
+
+week_id_offset = is_forex ? 1 : 0
+
 getFifoWeeklyAvwap(simple int weeks_back_from_latest) =>
-    anchor_week_id = latest_week_id - weeks_back_from_latest
+    anchor_week_id = latest_week_id - weeks_back_from_latest - week_id_offset
     weeks_since_anchor = weekly_id - anchor_week_id
     fifo_value = weeks_since_anchor == 0 ? rolling_week_0_avwap :
          weeks_since_anchor == 1 ? rolling_week_1_avwap :
@@ -74,11 +80,11 @@ week_2_avwap = getFifoWeeklyAvwap(2)
 week_3_avwap = getFifoWeeklyAvwap(3)
 week_4_avwap = getFifoWeeklyAvwap(4)
 
-week_0_anchor = start_new_week and weekly_id == latest_week_id
-week_1_anchor = start_new_week and weekly_id == latest_week_id - 1
-week_2_anchor = start_new_week and weekly_id == latest_week_id - 2
-week_3_anchor = start_new_week and weekly_id == latest_week_id - 3
-week_4_anchor = start_new_week and weekly_id == latest_week_id - 4
+week_0_anchor = start_new_week and weekly_id == latest_week_id - week_id_offset
+week_1_anchor = start_new_week and weekly_id == latest_week_id - 1 - week_id_offset
+week_2_anchor = start_new_week and weekly_id == latest_week_id - 2 - week_id_offset
+week_3_anchor = start_new_week and weekly_id == latest_week_id - 3 - week_id_offset
+week_4_anchor = start_new_week and weekly_id == latest_week_id - 4 - week_id_offset
 
 week_0_text = getWeekLabel(0)
 week_1_text = getWeekLabel(1)
